@@ -1,0 +1,44 @@
+agri-smart-ui/
+├── src/
+│   ├── app/                        # Next.js App Router
+│   │   ├── (auth)/                 # login, register, verify-email, forgot/reset password
+│   │   ├── (dashboard)/            # authenticated shell (sidebar/topnav layout)
+│   │   │   ├── dashboard/
+│   │   │   ├── farms/
+│   │   │   ├── crop-recommendations/
+│   │   │   ├── disease-detection/
+│   │   │   ├── ai-assistant/
+│   │   │   ├── notifications/
+│   │   │   └── profile/
+│   │   ├── admin/                  # role-gated, separate layout
+│   │   └── layout.tsx
+│   ├── features/                   # business logic per domain (NOT per route)
+│   │   ├── auth/
+│   │   │   ├── api.ts              # generated hooks/calls for this domain
+│   │   │   ├── store.ts            # zustand auth store
+│   │   │   ├── schemas.ts          # zod schemas mirroring backend validation
+│   │   │   └── components/
+│   │   ├── farms/
+│   │   ├── crop-recommendations/
+│   │   ├── disease-detection/
+│   │   ├── ai-assistant/
+│   │   ├── dashboard/
+│   │   ├── notifications/
+│   │   └── admin/
+│   ├── shared/
+│   │   ├── api/
+│   │   │   ├── client.ts           # fetch wrapper + refresh interceptor
+│   │   │   └── generated/          # openapi-typescript / orval output — do not hand-edit
+│   │   ├── components/ui/          # shadcn primitives
+│   │   ├── hooks/
+│   │   ├── lib/
+│   │   └── types/
+│   ├── middleware.ts                # route protection (checks session, redirects)
+│   └── config/
+│       └── env.ts                   # typed, validated env vars (zod)
+├── tests/
+│   ├── unit/
+│   ├── integration/
+│   └── e2e/
+├── .github/workflows/ci.yml
+└── ...standard config files (eslint, prettier, tsconfig, etc.)
