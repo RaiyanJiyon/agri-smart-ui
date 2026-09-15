@@ -36,6 +36,9 @@ jobs:
       - name: Run Next.js / ESLint Linter
         run: pnpm lint
 
+      - name: Generate Next.js Types
+        run: pnpm exec next build --experimental-build-mode compile
+
       - name: Type Check TypeScript
         run: pnpm exec tsc --noEmit
 
