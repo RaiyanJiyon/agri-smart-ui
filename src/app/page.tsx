@@ -1,3 +1,4 @@
+import { CtaBanner } from '@/features/landing/components/CtaBanner';
 import { Hero } from '@/features/landing/components/Hero';
 import { Footer } from '@/shared/components/layout/Footer';
 
@@ -6,6 +7,7 @@ export default function Home() {
     <div className="">
       <main>
         <Hero />
+        <CtaBanner />
       </main>
 
       <Footer />
