@@ -5,7 +5,10 @@ import who2 from '../../../../public/assets/who-2.jpg';
 
 export function WhoWeAre() {
   return (
-    <section className="grid gap-12 py-16 md:grid-cols-2 md:py-24">
+    <section
+      id="who-we-are"
+      className="grid gap-12 py-16 md:grid-cols-2 md:py-24"
+    >
       <div>
         <Eyebrow>Who We Are</Eyebrow>
         <h2 className="mt-6 max-w-md text-3xl font-bold leading-tight md:text-5xl">

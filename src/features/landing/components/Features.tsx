@@ -33,7 +33,7 @@ export function Features() {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="py-16 md:py-24">
+    <section id="features" className="py-16 md:py-24">
       <Eyebrow>Our Core Features</Eyebrow>
       <h2 className="mt-6 max-w-2xl text-3xl font-bold leading-tight md:text-5xl">
         Powerful Features Behind Every Recommendation

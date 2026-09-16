@@ -6,7 +6,12 @@ import Image from 'next/image';
 import heroField from '../../../../public/assets/hero-field.jpg';
 import drone from '../../../../public/assets/drone-cutout.png';
 
-const navLinks = ['About Us', 'Who We Are', 'Features', 'Newsroom'];
+const navLinks = [
+  { label: 'About Us', href: '#about-us' },
+  { label: 'Who We Are', href: '#who-we-are' },
+  { label: 'Features', href: '#features' },
+  { label: 'Newsroom', href: '#newsroom' },
+];
 
 export function Hero() {
   const [open, setOpen] = useState(false);
@@ -27,13 +32,13 @@ export function Hero() {
           <nav className="flex items-center justify-between">
             <Logo light />
             <div className="hidden items-center gap-7 lg:flex">
-              {navLinks.map((l) => (
+              {navLinks.map((link) => (
                 <a
-                  key={l}
-                  href="#"
+                  key={link.label}
+                  href={link.href}
                   className="text-sm text-[#FDFDF8]/85 transition-colors hover:text-[#FDFDF8]"
                 >
-                  {l}
+                  {link.label}
                 </a>
               ))}
             </div>
@@ -52,9 +57,13 @@ export function Hero() {
 
           {open && (
             <div className="mt-4 flex flex-col gap-3 rounded-3xl bg-[#0F2217]/80 p-5 backdrop-blur lg:hidden">
-              {navLinks.map((l) => (
-                <a key={l} href="#" className="text-sm text-[#FDFDF8]/90">
-                  {l}
+              {navLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="text-sm text-[#FDFDF8]/90"
+                >
+                  {link.label}
                 </a>
               ))}
               <div className="pt-1">

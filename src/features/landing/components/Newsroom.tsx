@@ -30,7 +30,7 @@ const posts = [
 
 export function Newsroom() {
   return (
-    <section className="py-16 md:py-24">
+    <section id="newsroom" className="py-16 md:py-24">
       <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
         <div>
           <Eyebrow>Newsroom</Eyebrow>
