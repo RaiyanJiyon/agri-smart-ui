@@ -34,7 +34,7 @@ export function Newsroom() {
       <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
         <div>
           <Eyebrow>Newsroom</Eyebrow>
-          <h2 className="mt-6 max-w-lg text-3xl font-semibold leading-tight md:text-5xl">
+          <h2 className="mt-6 max-w-lg text-3xl font-bold leading-tight md:text-5xl">
             Insights, Trends & Stories From Smart Farming
           </h2>
         </div>

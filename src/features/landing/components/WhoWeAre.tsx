@@ -8,7 +8,7 @@ export function WhoWeAre() {
     <section className="grid gap-12 py-16 md:grid-cols-2 md:py-24">
       <div>
         <Eyebrow>Who We Are</Eyebrow>
-        <h2 className="mt-6 max-w-md text-3xl font-semibold leading-tight md:text-5xl">
+        <h2 className="mt-6 max-w-md text-3xl font-bold leading-tight md:text-5xl">
           We Help Farmers Grow Smarter, Not Harder
         </h2>
         <p className="mt-6 max-w-md text-sm leading-relaxed text-[#68756B] md:text-base">

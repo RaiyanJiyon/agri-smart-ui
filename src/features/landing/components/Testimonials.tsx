@@ -77,7 +77,7 @@ export function Testimonials() {
   return (
     <section className="py-16 text-center md:py-24">
       <Eyebrow>Testimonials</Eyebrow>
-      <h2 className="mx-auto mt-6 max-w-2xl text-3xl font-semibold leading-tight md:text-5xl">
+      <h2 className="mx-auto mt-6 max-w-2xl text-3xl font-bold leading-tight md:text-5xl">
         What Farmers & Partners Say About AgriSmart
       </h2>
 
