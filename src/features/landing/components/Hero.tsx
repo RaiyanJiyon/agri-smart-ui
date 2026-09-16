@@ -63,7 +63,7 @@ export function Hero() {
             </div>
           )}
 
-          <h1 className="mx-auto mt-16 max-w-4xl text-center text-4xl font-semibold leading-[1.05] text-[#FDFDF8] sm:text-5xl md:mt-24 md:text-6xl lg:text-7xl">
+          <h1 className="mx-auto mt-16 max-w-4xl text-center font-heading text-4xl font-bold leading-[1.05] text-[#FDFDF8] sm:text-5xl md:mt-24 md:text-6xl lg:text-7xl">
             Smarter Farming, Powered by AI
           </h1>
 
