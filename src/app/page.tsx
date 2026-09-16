@@ -14,14 +14,14 @@ export default function Home() {
     <div className="">
       <main>
         <Hero />
-        <Features />
-        <Newsroom />
-        <CtaBanner />
-        <Products />
-        <Testimonials />
-        <Stats />
         <TrustBar />
         <WhoWeAre />
+        <Products />
+        <Features />
+        <CtaBanner />
+        <Newsroom />
+        <Testimonials />
+        <Stats />
       </main>
 
       <Footer />
