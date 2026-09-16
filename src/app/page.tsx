@@ -6,6 +6,7 @@ import { Products } from '@/features/landing/components/Products';
 import { Stats } from '@/features/landing/components/Stats';
 import { Testimonials } from '@/features/landing/components/Testimonials';
 import { TrustBar } from '@/features/landing/components/TrustBar';
+import { WhoWeAre } from '@/features/landing/components/WhoWeAre';
 import { Footer } from '@/shared/components/layout/Footer';
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
         <Testimonials />
         <Stats />
         <TrustBar />
+        <WhoWeAre />
       </main>
 
       <Footer />
