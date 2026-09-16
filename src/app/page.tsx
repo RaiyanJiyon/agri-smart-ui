@@ -5,6 +5,7 @@ import { Newsroom } from '@/features/landing/components/Newsroom';
 import { Products } from '@/features/landing/components/Products';
 import { Stats } from '@/features/landing/components/Stats';
 import { Testimonials } from '@/features/landing/components/Testimonials';
+import { TrustBar } from '@/features/landing/components/TrustBar';
 import { Footer } from '@/shared/components/layout/Footer';
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
         <Products />
         <Testimonials />
         <Stats />
+        <TrustBar />
       </main>
 
       <Footer />
