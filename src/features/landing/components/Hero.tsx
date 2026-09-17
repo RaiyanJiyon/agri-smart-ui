@@ -22,6 +22,7 @@ export function Hero() {
         <Image
           src={heroField}
           alt="Aerial view of farmland crop rows at golden hour"
+          priority
           width={1920}
           height={1200}
           className="absolute inset-0 size-full object-cover"
