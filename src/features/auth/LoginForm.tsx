@@ -1,7 +1,7 @@
 'use client';
 
 import { Mail, LockKeyhole } from 'lucide-react';
-import { FormEvent, useState } from 'react';
+import { useState, type FormEvent } from 'react';
 import Link from 'next/link';
 
 import {
@@ -13,23 +13,23 @@ import {
 } from '@/features/auth/AuthShell';
 import { Heading } from './AuthHeading';
 
-export function RegisterForm() {
+export function LoginForm() {
   const [loading, setLoading] = useState(false);
 
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setLoading(true);
 
-    // TODO: Replace with actual logic (e.g., Zod validation + Supabase mutation)
+    // TODO: Replace with actual logic (e.g., Zod validation + Supabase signIn)
     setTimeout(() => setLoading(false), 1000);
   }
 
   return (
     <AuthShell>
-      <AuthToggle active="register" />
+      <AuthToggle active="login" />
       <Heading
-        title="Create An Account"
-        copy="Start using AI-powered insights for better farming decisions."
+        title="Welcome Back"
+        copy="Log in to continue growing smarter with AgriSmart."
       />
       <form onSubmit={submit} className="space-y-5" noValidate>
         <AuthField
@@ -44,27 +44,29 @@ export function RegisterForm() {
           name="password"
           label="Password"
           type="password"
-          autoComplete="new-password"
-          placeholder="Create a password"
+          autoComplete="current-password"
+          placeholder="Enter your password"
           icon={<LockKeyhole className="size-4" />}
         />
-        <p className="-mt-3 text-xs text-[#68756B]">
-          Use at least 8 characters.
-        </p>
-        <AuthField
-          name="confirm"
-          label="Confirm Password"
-          type="password"
-          autoComplete="new-password"
-          placeholder="Enter it again"
-          icon={<LockKeyhole className="size-4" />}
-        />
-        <SubmitButton loading={loading}>Create an Account</SubmitButton>
+        <div className="flex items-center justify-between gap-4 text-xs text-[#68756B]">
+          <label className="flex items-center gap-2">
+            <input
+              name="remember"
+              type="checkbox"
+              className="size-4 accent-[#132A1D]"
+            />
+            Remember me
+          </label>
+          <Link href="/forgot-password" className={authLinkClass}>
+            Forgot password?
+          </Link>
+        </div>
+        <SubmitButton loading={loading}>Log In</SubmitButton>
       </form>
       <p className="mt-7 text-center text-sm text-[#68756B]">
-        Already have an account?{' '}
-        <Link href="/login" className={authLinkClass}>
-          Log In
+        Don&apos;t have an account?{' '}
+        <Link href="/register" className={authLinkClass}>
+          Sign Up
         </Link>
       </p>
     </AuthShell>
