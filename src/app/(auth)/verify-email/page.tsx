@@ -3,7 +3,13 @@ import { Suspense } from 'react';
 
 export default function VerifyEmailPage() {
   return (
-    <Suspense fallback={<div className="flex h-screen items-center justify-center">Loading...</div>}>
+    <Suspense
+      fallback={
+        <div className="flex h-screen items-center justify-center">
+          Loading...
+        </div>
+      }
+    >
       <VerifyEmailForm />
     </Suspense>
   );
