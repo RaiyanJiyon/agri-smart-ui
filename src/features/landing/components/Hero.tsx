@@ -43,9 +43,12 @@ export function Hero() {
                 </a>
               ))}
             </div>
+            
+            {/* FIX: Pass href directly to PillButton */}
             <div className="hidden lg:block">
-              <PillButton>Contact Us</PillButton>
+              <PillButton href="/login">Login</PillButton>
             </div>
+
             <button
               type="button"
               aria-label="Toggle menu"
@@ -67,8 +70,10 @@ export function Hero() {
                   {link.label}
                 </a>
               ))}
+              
+              {/* FIX: Pass href directly to PillButton here as well */}
               <div className="pt-1">
-                <PillButton>Contact Us</PillButton>
+                <PillButton href="/login">Login</PillButton>
               </div>
             </div>
           )}
