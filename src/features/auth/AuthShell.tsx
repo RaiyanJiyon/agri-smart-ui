@@ -1,64 +1,62 @@
 import { ArrowRight, Eye, EyeOff, Leaf, LoaderCircle } from 'lucide-react';
 import { useState, type InputHTMLAttributes, type ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
-import authField from '../../../public/assets/who-1.jpg';
+import authField from '../../../public/assets/sunset-field-walk.jpg';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export function AuthShell({ children }: { children: ReactNode }) {
   return (
-    <main className="min-h-screen bg-[#132A1D] p-3 sm:p-5 md:p-7">
-      <div className="mx-auto grid min-h-[calc(100vh-1.5rem)] max-w-[1360px] overflow-hidden rounded-[2rem] bg-[#FDFDF8] shadow-2xl sm:min-h-[calc(100vh-2.5rem)] md:grid-cols-[minmax(0,1fr)_minmax(430px,0.9fr)] md:rounded-[2.5rem]">
-        <section className="relative hidden overflow-hidden md:block">
-          <Image
-            src={authField}
-            alt="Farmer operating agricultural technology over a field at sunset"
-            className="absolute inset-0 size-full object-cover"
-            width={1360}
-            height={720}
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0F2217]/55 via-[#132A1D]/10 to-[#0F2217]/90" />
-          <div className="relative flex h-full min-h-[720px] flex-col justify-between p-8 lg:p-12">
-            <Link
-              href="/"
-              aria-label="AgriSmart home"
-              className="flex w-fit items-center gap-2 text-xl font-semibold text-[#FDFDF8]"
-            >
-              <Leaf className="size-6" strokeWidth={2.2} />
-              AgriSmart
-            </Link>
-            <div className="max-w-md pb-2 text-[#FDFDF8]">
-              <div className="mb-5 flex gap-2" aria-hidden="true">
-                <span className="h-1.5 w-8 rounded-full bg-[#FDFDF8]" />
-                <span className="size-1.5 rounded-full bg-[#FDFDF8]/45" />
-                <span className="size-1.5 rounded-full bg-[#FDFDF8]/45" />
-              </div>
-              <p className="text-3xl font-semibold leading-tight lg:text-4xl">
-                Grow Smarter With AI
-              </p>
-              <p className="mt-3 text-sm text-[#FDFDF8]/80 lg:text-base">
-                Your AI-powered partner for better harvests.
-              </p>
+    <div className="grid min-h-[calc(100vh-2.5rem)] w-full overflow-hidden rounded-[2rem] bg-[#FDFDF8] shadow-2xl md:grid-cols-[minmax(0,1fr)_minmax(430px,0.9fr)] md:rounded-[2.5rem]">
+      <section className="relative hidden overflow-hidden md:block">
+        <Image
+          src={authField}
+          alt="Farmer operating agricultural technology over a field at sunset"
+          className="absolute inset-0 size-full object-cover"
+          width={1360}
+          height={720}
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0F2217]/55 via-[#132A1D]/10 to-[#0F2217]/90" />
+        <div className="relative flex h-full min-h-[720px] flex-col justify-between p-8 lg:p-12">
+          <Link
+            href="/"
+            aria-label="AgriSmart home"
+            className="flex w-fit items-center gap-2 text-xl font-semibold text-[#FDFDF8]"
+          >
+            <Leaf className="size-6" strokeWidth={2.2} />
+            AgriSmart
+          </Link>
+          <div className="max-w-md pb-2 text-[#FDFDF8]">
+            <div className="mb-5 flex gap-2" aria-hidden="true">
+              <span className="h-1.5 w-8 rounded-full bg-[#FDFDF8]" />
+              <span className="size-1.5 rounded-full bg-[#FDFDF8]/45" />
+              <span className="size-1.5 rounded-full bg-[#FDFDF8]/45" />
             </div>
+            <p className="text-3xl font-semibold leading-tight lg:text-4xl">
+              Grow Smarter With AI
+            </p>
+            <p className="mt-3 text-sm text-[#FDFDF8]/80 lg:text-base">
+              Your AI-powered partner for better harvests.
+            </p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="flex min-w-0 items-center justify-center px-5 py-8 sm:px-10 md:px-12 lg:px-20">
-          <div className="w-full max-w-[420px]">
-            <Link
-              href="/"
-              aria-label="AgriSmart home"
-              className="mx-auto mb-10 flex w-fit items-center gap-2 text-xl font-semibold text-[#132A1D] md:hidden"
-            >
-              <Leaf className="size-6" strokeWidth={2.2} />
-              AgriSmart
-            </Link>
-            {children}
-          </div>
-        </section>
-      </div>
-    </main>
+      <section className="flex min-w-0 items-center justify-center px-5 py-8 sm:px-10 md:px-12 lg:px-20">
+        <div className="w-full max-w-[420px]">
+          <Link
+            href="/"
+            aria-label="AgriSmart home"
+            className="mx-auto mb-10 flex w-fit items-center gap-2 text-xl font-semibold text-[#132A1D] md:hidden"
+          >
+            <Leaf className="size-6" strokeWidth={2.2} />
+            AgriSmart
+          </Link>
+          {children}
+        </div>
+      </section>
+    </div>
   );
 }
 

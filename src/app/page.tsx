@@ -11,21 +11,19 @@ import { Footer } from '@/shared/components/layout/Footer';
 
 export default function Home() {
   return (
-    <div className="bg-[#132A1D] p-3 sm:p-5">
-      <div className="mx-auto max-w-[1360px]">
-        <Hero />
-        <main className="mt-4 rounded-[2rem] bg-[#E7EBDA] px-5 sm:px-8 lg:px-12">
-          <TrustBar />
-          <WhoWeAre />
-          <Products />
-          <Features />
-          <CtaBanner />
-          <Newsroom />
-          <Testimonials />
-          <Stats />
-        </main>
-        <Footer />
-      </div>
-    </div>
+    <>
+      <Hero />
+      <main className="mt-4 rounded-[2rem] bg-[#E7EBDA] px-5 sm:px-8 lg:px-12">
+        <TrustBar />
+        <WhoWeAre />
+        <Products />
+        <Features />
+        <CtaBanner />
+        <Newsroom />
+        <Testimonials />
+        <Stats />
+      </main>
+      <Footer />
+    </>
   );
 }
