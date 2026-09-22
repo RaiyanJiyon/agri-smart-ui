@@ -43,7 +43,7 @@ export function Hero() {
                 </a>
               ))}
             </div>
-            
+
             {/* FIX: Pass href directly to PillButton */}
             <div className="hidden lg:block">
               <PillButton href="/login">Login</PillButton>
@@ -70,7 +70,7 @@ export function Hero() {
                   {link.label}
                 </a>
               ))}
-              
+
               {/* FIX: Pass href directly to PillButton here as well */}
               <div className="pt-1">
                 <PillButton href="/login">Login</PillButton>
