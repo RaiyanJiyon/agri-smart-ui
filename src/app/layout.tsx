@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Plus_Jakarta_Sans, Poppins } from 'next/font/google';
 import './globals.css';
+import { TooltipProvider } from '@/components/ui/tooltip';
 
 const jakarta = Plus_Jakarta_Sans({
   variable: '--font-jakarta',
@@ -26,9 +27,11 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
       className={`${jakarta.variable} ${poppins.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-[#132A1D] p-3 sm:p-5">
-        <div className="mx-auto max-w-[1360px] flex flex-col min-h-screen">
-          {children}
-        </div>
+        <TooltipProvider>
+          <div className="mx-auto max-w-[1360px] flex flex-col min-h-screen">
+            {children}
+          </div>
+        </TooltipProvider>
       </body>
     </html>
   );
