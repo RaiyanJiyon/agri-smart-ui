@@ -22,6 +22,7 @@ import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup, // <-- Added this import
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
@@ -206,20 +207,27 @@ function TopBar({ title }: { title: string }) {
             align="end"
             className="w-52 rounded-2xl border-[#D4DAC8] bg-[#FDFDF8] p-2 text-[#132A1D]"
           >
-            <DropdownMenuLabel className="px-3 py-2">
-              My account
-            </DropdownMenuLabel>
+            {/* FIX: Wrapped items in DropdownMenuGroup */}
+            <DropdownMenuGroup>
+              <DropdownMenuLabel className="px-3 py-2">
+                My account
+              </DropdownMenuLabel>
+              <DropdownMenuItem className="rounded-xl px-3 py-2 focus:bg-[#E7EBDA] focus:text-[#132A1D]">
+                <UserRound className="mr-2 size-4" /> Profile
+              </DropdownMenuItem>
+              <DropdownMenuItem className="rounded-xl px-3 py-2 focus:bg-[#E7EBDA] focus:text-[#132A1D]">
+                <Settings className="mr-2 size-4" /> Settings
+              </DropdownMenuItem>
+            </DropdownMenuGroup>
+
             <DropdownMenuSeparator className="bg-[#D4DAC8]" />
-            <DropdownMenuItem className="rounded-xl px-3 py-2 focus:bg-[#E7EBDA] focus:text-[#132A1D]">
-              <UserRound /> Profile
-            </DropdownMenuItem>
-            <DropdownMenuItem className="rounded-xl px-3 py-2 focus:bg-[#E7EBDA] focus:text-[#132A1D]">
-              <Settings /> Settings
-            </DropdownMenuItem>
-            <DropdownMenuSeparator className="bg-[#D4DAC8]" />
-            <DropdownMenuItem className="rounded-xl px-3 py-2 text-[#B42318] focus:bg-[#FDECEA] focus:text-[#B42318]">
-              <LogOut /> Log Out
-            </DropdownMenuItem>
+
+            {/* FIX: Wrapped logout in its own group to satisfy Base UI context requirements */}
+            <DropdownMenuGroup>
+              <DropdownMenuItem className="rounded-xl px-3 py-2 text-[#B42318] focus:bg-[#FDECEA] focus:text-[#B42318]">
+                <LogOut className="mr-2 size-4" /> Log Out
+              </DropdownMenuItem>
+            </DropdownMenuGroup>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
