@@ -1,5 +1,5 @@
 import { DiseaseDetectionView } from '@/features/disease-detection/DiseaseDetectionView';
 
-export default function DashboardPage() {
+export default function DiseaseDetectionPage() {
   return <DiseaseDetectionView />;
 }
