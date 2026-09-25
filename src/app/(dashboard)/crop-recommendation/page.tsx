@@ -1,24 +1,30 @@
-import { CheckCircle2, FlaskConical, Leaf, Save, Sprout } from "lucide-react";
-import { AppShell } from "@/features/shared/AppShell";
-import { PageIntro, PrimaryAction, StatusBadge, cardClass, inputClass } from "@/features/shared/shared";
-import { Button } from "@/components/ui/button";
+import { CheckCircle2, FlaskConical, Leaf, Save, Sprout } from 'lucide-react';
+import { AppShell } from '@/features/shared/AppShell';
+import {
+  PageIntro,
+  PrimaryAction,
+  StatusBadge,
+  cardClass,
+  inputClass,
+} from '@/features/shared/shared';
+import { Button } from '@/components/ui/button';
 
 const fields = [
-  { label: "Nitrogen (N)", value: "82", unit: "kg/ha" },
-  { label: "Phosphorus (P)", value: "42", unit: "kg/ha" },
-  { label: "Potassium (K)", value: "38", unit: "kg/ha" },
-  { label: "Temperature", value: "26", unit: "°C" },
-  { label: "Humidity", value: "84", unit: "%" },
-  { label: "Soil pH", value: "6.5", unit: "0–14" },
-  { label: "Rainfall", value: "218", unit: "mm" },
+  { label: 'Nitrogen (N)', value: '82', unit: 'kg/ha' },
+  { label: 'Phosphorus (P)', value: '42', unit: 'kg/ha' },
+  { label: 'Potassium (K)', value: '38', unit: 'kg/ha' },
+  { label: 'Temperature', value: '26', unit: '°C' },
+  { label: 'Humidity', value: '84', unit: '%' },
+  { label: 'Soil pH', value: '6.5', unit: '0–14' },
+  { label: 'Rainfall', value: '218', unit: 'mm' },
 ];
 
 const history = [
-  ["Sep 18, 2026", "Rice", "95%", "Completed"],
-  ["Sep 12, 2026", "Maize", "89%", "Completed"],
-  ["Sep 08, 2026", "Cotton", "—", "Processing"],
-  ["Aug 27, 2026", "Chickpea", "86%", "Completed"],
-  ["Aug 21, 2026", "—", "—", "Failed"],
+  ['Sep 18, 2026', 'Rice', '95%', 'Completed'],
+  ['Sep 12, 2026', 'Maize', '89%', 'Completed'],
+  ['Sep 08, 2026', 'Cotton', '—', 'Processing'],
+  ['Aug 27, 2026', 'Chickpea', '86%', 'Completed'],
+  ['Aug 21, 2026', '—', '—', 'Failed'],
 ] as const;
 
 export default function CropRecommendationPage() {
@@ -36,7 +42,9 @@ export default function CropRecommendationPage() {
                 <FlaskConical />
               </span>
               <div>
-                <h3 className="font-semibold text-[#132A1D]">Soil & Climate Data</h3>
+                <h3 className="font-semibold text-[#132A1D]">
+                  Soil & Climate Data
+                </h3>
                 <p className="mt-1 text-xs text-[#68756B]">
                   Use the latest readings from your field
                 </p>
@@ -46,7 +54,7 @@ export default function CropRecommendationPage() {
               {fields.map((field) => (
                 <label
                   key={field.label}
-                  className={field.label === "Rainfall" ? "sm:col-span-2" : ""}
+                  className={field.label === 'Rainfall' ? 'sm:col-span-2' : ''}
                 >
                   <span className="mb-2 block text-sm font-medium text-[#1F3527]">
                     {field.label}
@@ -87,18 +95,22 @@ export default function CropRecommendationPage() {
               </p>
               <h3 className="mt-2 text-4xl font-semibold">Rice</h3>
               <p className="mt-4 text-sm leading-7 text-[#FDFDF8]/72">
-                Your field&apos;s strong nitrogen level, high humidity, and recent rainfall create
-                excellent conditions for rice cultivation.
+                Your field&apos;s strong nitrogen level, high humidity, and
+                recent rainfall create excellent conditions for rice
+                cultivation.
               </p>
               <div className="mt-6 space-y-3 border-t border-[#FDFDF8]/12 pt-5">
                 <p className="flex items-center gap-2 text-sm">
-                  <CheckCircle2 className="size-4 text-[#D9A15B]" /> Optimal humidity range
+                  <CheckCircle2 className="size-4 text-[#D9A15B]" /> Optimal
+                  humidity range
                 </p>
                 <p className="flex items-center gap-2 text-sm">
-                  <CheckCircle2 className="size-4 text-[#D9A15B]" /> Suitable soil acidity
+                  <CheckCircle2 className="size-4 text-[#D9A15B]" /> Suitable
+                  soil acidity
                 </p>
                 <p className="flex items-center gap-2 text-sm">
-                  <CheckCircle2 className="size-4 text-[#D9A15B]" /> Strong nitrogen availability
+                  <CheckCircle2 className="size-4 text-[#D9A15B]" /> Strong
+                  nitrogen availability
                 </p>
               </div>
               <Button
@@ -114,8 +126,12 @@ export default function CropRecommendationPage() {
 
         <section className={`${cardClass} mt-6 overflow-hidden`}>
           <div className="border-b border-[#D4DAC8] px-5 py-5 sm:px-7">
-            <h3 className="font-semibold text-[#132A1D]">Recommendation History</h3>
-            <p className="mt-1 text-xs text-[#68756B]">Your recent crop matches</p>
+            <h3 className="font-semibold text-[#132A1D]">
+              Recommendation History
+            </h3>
+            <p className="mt-1 text-xs text-[#68756B]">
+              Your recent crop matches
+            </p>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full min-w-[680px] text-left text-sm">
@@ -131,7 +147,9 @@ export default function CropRecommendationPage() {
                 {history.map((row) => (
                   <tr key={row[0]}>
                     <td className="px-7 py-4 text-[#68756B]">{row[0]}</td>
-                    <td className="px-5 py-4 font-semibold text-[#1F3527]">{row[1]}</td>
+                    <td className="px-5 py-4 font-semibold text-[#1F3527]">
+                      {row[1]}
+                    </td>
                     <td className="px-5 py-4 text-[#68756B]">{row[2]}</td>
                     <td className="px-7 py-4">
                       <StatusBadge status={row[3]} />

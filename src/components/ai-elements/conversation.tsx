@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import * as React from "react";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { ArrowDownIcon } from "lucide-react";
+import * as React from 'react';
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import { ArrowDownIcon } from 'lucide-react';
 
-export type ConversationProps = React.ComponentProps<"div">;
+export type ConversationProps = React.ComponentProps<'div'>;
 
 export const Conversation = React.forwardRef<HTMLDivElement, ConversationProps>(
   ({ className, children, ...props }, ref) => {
@@ -13,7 +13,7 @@ export const Conversation = React.forwardRef<HTMLDivElement, ConversationProps>(
       <div
         ref={ref}
         role="log"
-        className={cn("relative flex-1 overflow-y-auto", className)}
+        className={cn('relative flex-1 overflow-y-auto', className)}
         {...props}
       >
         {children}
@@ -21,9 +21,9 @@ export const Conversation = React.forwardRef<HTMLDivElement, ConversationProps>(
     );
   }
 );
-Conversation.displayName = "Conversation";
+Conversation.displayName = 'Conversation';
 
-export type ConversationContentProps = React.ComponentProps<"div">;
+export type ConversationContentProps = React.ComponentProps<'div'>;
 
 export const ConversationContent = React.forwardRef<
   HTMLDivElement,
@@ -32,14 +32,14 @@ export const ConversationContent = React.forwardRef<
   return (
     <div
       ref={ref}
-      className={cn("flex flex-col gap-6 p-4", className)}
+      className={cn('flex flex-col gap-6 p-4', className)}
       {...props}
     >
       {children}
     </div>
   );
 });
-ConversationContent.displayName = "ConversationContent";
+ConversationContent.displayName = 'ConversationContent';
 
 export type ConversationScrollButtonProps = React.ComponentProps<typeof Button>;
 
@@ -53,7 +53,7 @@ export const ConversationScrollButton = ({
       variant="outline"
       size="icon-sm"
       className={cn(
-        "absolute bottom-4 right-4 z-10 size-8 rounded-full shadow-md",
+        'absolute bottom-4 right-4 z-10 size-8 rounded-full shadow-md',
         className
       )}
       onClick={(e) => {
@@ -61,7 +61,7 @@ export const ConversationScrollButton = ({
         if (scrollContainer) {
           scrollContainer.scrollTo({
             top: scrollContainer.scrollHeight,
-            behavior: "smooth",
+            behavior: 'smooth',
           });
         }
         onClick?.(e);
@@ -73,4 +73,4 @@ export const ConversationScrollButton = ({
     </Button>
   );
 };
-ConversationScrollButton.displayName = "ConversationScrollButton";
+ConversationScrollButton.displayName = 'ConversationScrollButton';

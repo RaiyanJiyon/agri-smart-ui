@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   Bell,
@@ -13,12 +13,12 @@ import {
   Settings,
   Sprout,
   UserRound,
-} from "lucide-react";
-import * as React from "react";
-import type { ReactNode } from "react";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
+} from 'lucide-react';
+import * as React from 'react';
+import type { ReactNode } from 'react';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -26,7 +26,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from '@/components/ui/dropdown-menu';
 import {
   Sidebar,
   SidebarContent,
@@ -42,18 +42,26 @@ import {
   SidebarRail,
   SidebarTrigger,
   useSidebar,
-} from "@/components/ui/sidebar";
+} from '@/components/ui/sidebar';
 
 const mainItems = [
-  { title: "Dashboard", to: "/dashboard" as const, icon: LayoutDashboard },
-  { title: "Crop Recommendation", to: "/crop-recommendation" as const, icon: Sprout },
-  { title: "Disease Detection", to: "/disease-detection" as const, icon: Microscope },
-  { title: "AI Assistant", to: "/ai-assistant" as const, icon: Bot },
+  { title: 'Dashboard', to: '/dashboard' as const, icon: LayoutDashboard },
+  {
+    title: 'Crop Recommendation',
+    to: '/crop-recommendation' as const,
+    icon: Sprout,
+  },
+  {
+    title: 'Disease Detection',
+    to: '/disease-detection' as const,
+    icon: Microscope,
+  },
+  { title: 'AI Assistant', to: '/ai-assistant' as const, icon: Bot },
 ];
 
 const futureItems = [
-  { title: "Farms", icon: Map },
-  { title: "Profile", icon: CircleUserRound },
+  { title: 'Farms', icon: Map },
+  { title: 'Profile', icon: CircleUserRound },
 ];
 
 function Brand() {
@@ -67,7 +75,7 @@ function Brand() {
       <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-[#FDFDF8] text-[#132A1D]">
         <Leaf className="size-5" strokeWidth={2.3} />
       </span>
-      {(state === "expanded" || isMobile) && (
+      {(state === 'expanded' || isMobile) && (
         <span className="text-xl font-semibold">AgriSmart</span>
       )}
     </Link>
@@ -82,13 +90,13 @@ function AppSidebar() {
       collapsible="icon"
       style={
         {
-          "--sidebar": "#132A1D",
-          "--sidebar-foreground": "#FDFDF8",
-          "--sidebar-primary": "#FDFDF8",
-          "--sidebar-primary-foreground": "#132A1D",
-          "--sidebar-accent": "rgba(253, 253, 248, 0.1)",
-          "--sidebar-accent-foreground": "#FDFDF8",
-          "--sidebar-border": "rgba(253, 253, 248, 0.1)",
+          '--sidebar': '#132A1D',
+          '--sidebar-foreground': '#FDFDF8',
+          '--sidebar-primary': '#FDFDF8',
+          '--sidebar-primary-foreground': '#132A1D',
+          '--sidebar-accent': 'rgba(253, 253, 248, 0.1)',
+          '--sidebar-accent-foreground': '#FDFDF8',
+          '--sidebar-border': 'rgba(253, 253, 248, 0.1)',
         } as React.CSSProperties
       }
       className="border-r-0 bg-[#132A1D] text-[#FDFDF8] [&_[data-sidebar=sidebar]]:!bg-[#132A1D] [&_[data-sidebar=sidebar]]:!text-[#FDFDF8]"
@@ -108,7 +116,7 @@ function AppSidebar() {
                       render={<Link href={item.to} />}
                       isActive={active}
                       tooltip={item.title}
-                      className={`h-11 rounded-full px-3 text-sm transition-colors ${active ? "bg-[#FDFDF8] text-[#132A1D] hover:bg-[#FDFDF8] hover:text-[#132A1D]" : "text-[#FDFDF8]/72 hover:bg-[#FDFDF8]/10 hover:text-[#FDFDF8]"}`}
+                      className={`h-11 rounded-full px-3 text-sm transition-colors ${active ? 'bg-[#FDFDF8] text-[#132A1D] hover:bg-[#FDFDF8] hover:text-[#132A1D]' : 'text-[#FDFDF8]/72 hover:bg-[#FDFDF8]/10 hover:text-[#FDFDF8]'}`}
                     >
                       <item.icon className="size-4.5" />
                       <span>{item.title}</span>
@@ -156,7 +164,9 @@ function TopBar({ title }: { title: string }) {
     <header className="sticky top-0 z-20 flex h-18 items-center justify-between border-b border-[#D4DAC8] bg-[#FDFDF8]/95 px-4 backdrop-blur sm:px-6 lg:px-8">
       <div className="flex min-w-0 items-center gap-3">
         <SidebarTrigger className="size-9 rounded-full text-[#132A1D] hover:bg-[#E7EBDA] hover:text-[#132A1D]" />
-        <h1 className="truncate text-lg font-semibold text-[#132A1D] sm:text-xl">{title}</h1>
+        <h1 className="truncate text-lg font-semibold text-[#132A1D] sm:text-xl">
+          {title}
+        </h1>
       </div>
       <div className="flex items-center gap-2 sm:gap-3">
         <Button
@@ -183,7 +193,9 @@ function TopBar({ title }: { title: string }) {
               AR
             </span>
             <span className="hidden text-left sm:block">
-              <span className="block text-sm font-semibold leading-none">Amina Rahman</span>
+              <span className="block text-sm font-semibold leading-none">
+                Amina Rahman
+              </span>
               <span className="mt-1 block text-[11px] font-normal text-[#68756B]">
                 Green Valley Farm
               </span>
@@ -194,7 +206,9 @@ function TopBar({ title }: { title: string }) {
             align="end"
             className="w-52 rounded-2xl border-[#D4DAC8] bg-[#FDFDF8] p-2 text-[#132A1D]"
           >
-            <DropdownMenuLabel className="px-3 py-2">My account</DropdownMenuLabel>
+            <DropdownMenuLabel className="px-3 py-2">
+              My account
+            </DropdownMenuLabel>
             <DropdownMenuSeparator className="bg-[#D4DAC8]" />
             <DropdownMenuItem className="rounded-xl px-3 py-2 focus:bg-[#E7EBDA] focus:text-[#132A1D]">
               <UserRound /> Profile
@@ -213,7 +227,13 @@ function TopBar({ title }: { title: string }) {
   );
 }
 
-export function AppShell({ title, children }: { title: string; children: ReactNode }) {
+export function AppShell({
+  title,
+  children,
+}: {
+  title: string;
+  children: ReactNode;
+}) {
   return (
     <SidebarProvider defaultOpen>
       <AppSidebar />

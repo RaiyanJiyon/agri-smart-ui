@@ -1,6 +1,6 @@
-import { ArrowRight } from "lucide-react";
-import type { ReactNode } from "react";
-import { Button } from "@/components/ui/button";
+import { ArrowRight } from 'lucide-react';
+import type { ReactNode } from 'react';
+import { Button } from '@/components/ui/button';
 
 export function PageIntro({
   title,
@@ -14,7 +14,9 @@ export function PageIntro({
   return (
     <div className="mb-6 flex flex-col gap-4 sm:mb-8 sm:flex-row sm:items-end sm:justify-between">
       <div>
-        <h2 className="text-2xl font-semibold text-[#132A1D] sm:text-3xl">{title}</h2>
+        <h2 className="text-2xl font-semibold text-[#132A1D] sm:text-3xl">
+          {title}
+        </h2>
         <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[#68756B] sm:text-base">
           {description}
         </p>
@@ -24,15 +26,21 @@ export function PageIntro({
   );
 }
 
-export function StatusBadge({ status }: { status: "Completed" | "Processing" | "Failed" }) {
+export function StatusBadge({
+  status,
+}: {
+  status: 'Completed' | 'Processing' | 'Failed';
+}) {
   const style =
-    status === "Completed"
-      ? "bg-[#E2F2E8] text-[#21633A]"
-      : status === "Processing"
-        ? "bg-[#FFF1D6] text-[#8A5A16]"
-        : "bg-[#FDECEA] text-[#B42318]";
+    status === 'Completed'
+      ? 'bg-[#E2F2E8] text-[#21633A]'
+      : status === 'Processing'
+        ? 'bg-[#FFF1D6] text-[#8A5A16]'
+        : 'bg-[#FDECEA] text-[#B42318]';
   return (
-    <span className={`inline-flex rounded-full px-2.5 py-1 text-[11px] font-semibold ${style}`}>
+    <span
+      className={`inline-flex rounded-full px-2.5 py-1 text-[11px] font-semibold ${style}`}
+    >
       {status}
     </span>
   );
@@ -40,10 +48,10 @@ export function StatusBadge({ status }: { status: "Completed" | "Processing" | "
 
 export function PrimaryAction({
   children,
-  type = "button",
+  type = 'button',
 }: {
   children: ReactNode;
-  type?: "button" | "submit";
+  type?: 'button' | 'submit';
 }) {
   return (
     <Button
@@ -58,6 +66,7 @@ export function PrimaryAction({
   );
 }
 
-export const cardClass = "rounded-[1.5rem] border border-[#D4DAC8] bg-[#FDFDF8]";
+export const cardClass =
+  'rounded-[1.5rem] border border-[#D4DAC8] bg-[#FDFDF8]';
 export const inputClass =
-  "h-12 w-full rounded-2xl border border-[#D4DAC8] bg-[#FDFDF8] px-4 text-sm text-[#132A1D] outline-none placeholder:text-[#68756B]/65 focus:border-[#132A1D] focus:ring-4 focus:ring-[#132A1D]/10";
+  'h-12 w-full rounded-2xl border border-[#D4DAC8] bg-[#FDFDF8] px-4 text-sm text-[#132A1D] outline-none placeholder:text-[#68756B]/65 focus:border-[#132A1D] focus:ring-4 focus:ring-[#132A1D]/10';

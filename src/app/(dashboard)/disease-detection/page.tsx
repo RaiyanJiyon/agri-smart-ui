@@ -1,23 +1,50 @@
-import { CheckCircle2, ImageUp, Microscope, ShieldCheck, Upload, X } from "lucide-react";
-import { AppShell } from "@/features/shared/AppShell";
-import { PageIntro, PrimaryAction, StatusBadge, cardClass } from "@/features/shared/shared";
-import { Button } from "@/components/ui/button";
-import reportOne from "../../../../public/assets/news-1.jpg";
-import reportTwo from "../../../../public/assets/news-2.jpg";
-import reportThree from "../../../../public/assets/news-3.jpg";
-import reportFour from "../../../../public/assets/news-1.jpg";
-import Image from "next/image";
+import {
+  CheckCircle2,
+  ImageUp,
+  Microscope,
+  ShieldCheck,
+  Upload,
+  X,
+} from 'lucide-react';
+import { AppShell } from '@/features/shared/AppShell';
+import {
+  PageIntro,
+  PrimaryAction,
+  StatusBadge,
+  cardClass,
+} from '@/features/shared/shared';
+import { Button } from '@/components/ui/button';
+import reportOne from '../../../../public/assets/news-1.jpg';
+import reportTwo from '../../../../public/assets/news-2.jpg';
+import reportThree from '../../../../public/assets/news-3.jpg';
+import reportFour from '../../../../public/assets/news-1.jpg';
+import Image from 'next/image';
 
 const reports = [
-  { image: reportOne, disease: "Early Blight", date: "Sep 16, 2026", status: "Completed" as const },
-  { image: reportTwo, disease: "Leaf Spot", date: "Sep 11, 2026", status: "Completed" as const },
+  {
+    image: reportOne,
+    disease: 'Early Blight',
+    date: 'Sep 16, 2026',
+    status: 'Completed' as const,
+  },
+  {
+    image: reportTwo,
+    disease: 'Leaf Spot',
+    date: 'Sep 11, 2026',
+    status: 'Completed' as const,
+  },
   {
     image: reportThree,
-    disease: "Under Review",
-    date: "Sep 08, 2026",
-    status: "Processing" as const,
+    disease: 'Under Review',
+    date: 'Sep 08, 2026',
+    status: 'Processing' as const,
   },
-  { image: reportFour, disease: "Image Unclear", date: "Aug 29, 2026", status: "Failed" as const },
+  {
+    image: reportFour,
+    disease: 'Image Unclear',
+    date: 'Aug 29, 2026',
+    status: 'Failed' as const,
+  },
 ];
 
 export default function DiseaseDetectionPage() {
@@ -36,7 +63,9 @@ export default function DiseaseDetectionPage() {
               </span>
               <div>
                 <h3 className="font-semibold text-[#132A1D]">Crop Image</h3>
-                <p className="mt-1 text-xs text-[#68756B]">Clear, well-lit leaf photos work best</p>
+                <p className="mt-1 text-xs text-[#68756B]">
+                  Clear, well-lit leaf photos work best
+                </p>
               </div>
             </div>
             <div className="flex min-h-64 flex-col items-center justify-center rounded-[1.25rem] border-2 border-dashed border-[#AEB8A5] bg-[#F2F4EA] px-6 text-center">
@@ -46,7 +75,9 @@ export default function DiseaseDetectionPage() {
               <p className="mt-5 font-semibold text-[#1F3527]">
                 Drag & drop an image, or click to browse
               </p>
-              <p className="mt-2 text-xs text-[#68756B]">JPG or PNG, up to 10 MB</p>
+              <p className="mt-2 text-xs text-[#68756B]">
+                JPG or PNG, up to 10 MB
+              </p>
               <Button
                 type="button"
                 variant="outline"
@@ -64,8 +95,12 @@ export default function DiseaseDetectionPage() {
                 height={56}
               />
               <div className="min-w-0 flex-1">
-                <p className="truncate text-sm font-semibold text-[#1F3527]">tomato-leaf.jpg</p>
-                <p className="mt-1 text-xs text-[#68756B]">2.4 MB · Ready to analyze</p>
+                <p className="truncate text-sm font-semibold text-[#1F3527]">
+                  tomato-leaf.jpg
+                </p>
+                <p className="mt-1 text-xs text-[#68756B]">
+                  2.4 MB · Ready to analyze
+                </p>
               </div>
               <Button
                 type="button"
@@ -91,8 +126,12 @@ export default function DiseaseDetectionPage() {
             <div className="p-6">
               <div className="flex items-center justify-between gap-3">
                 <div>
-                  <p className="text-xs font-semibold uppercase text-[#68756B]">Diagnosis</p>
-                  <h3 className="mt-1 text-2xl font-semibold text-[#132A1D]">Early Blight</h3>
+                  <p className="text-xs font-semibold uppercase text-[#68756B]">
+                    Diagnosis
+                  </p>
+                  <h3 className="mt-1 text-2xl font-semibold text-[#132A1D]">
+                    Early Blight
+                  </h3>
                 </div>
                 <span className="rounded-full bg-[#E2F2E8] px-3 py-1 text-xs font-semibold text-[#21633A]">
                   92% Confidence
@@ -100,20 +139,21 @@ export default function DiseaseDetectionPage() {
               </div>
               <div className="mt-5 rounded-2xl bg-[#F2F4EA] p-4">
                 <p className="flex items-center gap-2 text-sm font-semibold text-[#1F3527]">
-                  <ShieldCheck className="size-4 text-[#21633A]" /> Recommended Remedies
+                  <ShieldCheck className="size-4 text-[#21633A]" /> Recommended
+                  Remedies
                 </p>
                 <ul className="mt-3 space-y-3 text-sm leading-relaxed text-[#68756B]">
                   <li className="flex gap-2">
-                    <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-[#21633A]" /> Apply a
-                    copper-based fungicide.
+                    <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-[#21633A]" />{' '}
+                    Apply a copper-based fungicide.
                   </li>
                   <li className="flex gap-2">
-                    <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-[#21633A]" /> Remove
-                    affected lower leaves.
+                    <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-[#21633A]" />{' '}
+                    Remove affected lower leaves.
                   </li>
                   <li className="flex gap-2">
-                    <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-[#21633A]" /> Improve
-                    airflow around plants.
+                    <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-[#21633A]" />{' '}
+                    Improve airflow around plants.
                   </li>
                 </ul>
               </div>
@@ -124,7 +164,9 @@ export default function DiseaseDetectionPage() {
         <section className="mt-8">
           <div className="mb-4 flex items-center gap-3">
             <Microscope className="size-5 text-[#132A1D]" />
-            <h3 className="font-semibold text-[#132A1D]">Past Disease Reports</h3>
+            <h3 className="font-semibold text-[#132A1D]">
+              Past Disease Reports
+            </h3>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
             {reports.map((report) => (
@@ -142,8 +184,12 @@ export default function DiseaseDetectionPage() {
                 <div className="p-4">
                   <div className="flex items-start justify-between gap-2">
                     <div>
-                      <h4 className="font-semibold text-[#1F3527]">{report.disease}</h4>
-                      <p className="mt-1 text-xs text-[#68756B]">{report.date}</p>
+                      <h4 className="font-semibold text-[#1F3527]">
+                        {report.disease}
+                      </h4>
+                      <p className="mt-1 text-xs text-[#68756B]">
+                        {report.date}
+                      </p>
                     </div>
                     <StatusBadge status={report.status} />
                   </div>
