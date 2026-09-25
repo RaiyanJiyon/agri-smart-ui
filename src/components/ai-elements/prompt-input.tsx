@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import * as React from "react";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { ArrowUpIcon } from "lucide-react";
+import * as React from 'react';
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import { ArrowUpIcon } from 'lucide-react';
 
-export type PromptInputProps = React.ComponentProps<"form">;
+export type PromptInputProps = React.ComponentProps<'form'>;
 
 export const PromptInput = React.forwardRef<HTMLFormElement, PromptInputProps>(
   ({ className, onSubmit, children, ...props }, ref) => {
@@ -14,7 +14,7 @@ export const PromptInput = React.forwardRef<HTMLFormElement, PromptInputProps>(
         ref={ref}
         onSubmit={onSubmit}
         className={cn(
-          "flex flex-col rounded-2xl border border-input bg-background p-2 transition-shadow",
+          'flex flex-col rounded-2xl border border-input bg-background p-2 transition-shadow',
           className
         )}
         {...props}
@@ -24,16 +24,16 @@ export const PromptInput = React.forwardRef<HTMLFormElement, PromptInputProps>(
     );
   }
 );
-PromptInput.displayName = "PromptInput";
+PromptInput.displayName = 'PromptInput';
 
-export type PromptInputTextareaProps = React.ComponentProps<"textarea">;
+export type PromptInputTextareaProps = React.ComponentProps<'textarea'>;
 
 export const PromptInputTextarea = React.forwardRef<
   HTMLTextAreaElement,
   PromptInputTextareaProps
 >(({ className, onKeyDown, ...props }, ref) => {
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    if (e.key === "Enter" && !e.shiftKey) {
+    if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       e.currentTarget.form?.requestSubmit();
     }
@@ -46,16 +46,16 @@ export const PromptInputTextarea = React.forwardRef<
       rows={1}
       onKeyDown={handleKeyDown}
       className={cn(
-        "w-full resize-none bg-transparent px-3 py-2 text-sm outline-none placeholder:text-muted-foreground",
+        'w-full resize-none bg-transparent px-3 py-2 text-sm outline-none placeholder:text-muted-foreground',
         className
       )}
       {...props}
     />
   );
 });
-PromptInputTextarea.displayName = "PromptInputTextarea";
+PromptInputTextarea.displayName = 'PromptInputTextarea';
 
-export type PromptInputFooterProps = React.ComponentProps<"div">;
+export type PromptInputFooterProps = React.ComponentProps<'div'>;
 
 export const PromptInputFooter = React.forwardRef<
   HTMLDivElement,
@@ -63,31 +63,31 @@ export const PromptInputFooter = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("flex items-center justify-between gap-2 pt-2", className)}
+    className={cn('flex items-center justify-between gap-2 pt-2', className)}
     {...props}
   >
     {children}
   </div>
 ));
-PromptInputFooter.displayName = "PromptInputFooter";
+PromptInputFooter.displayName = 'PromptInputFooter';
 
 export type PromptInputSubmitProps = React.ComponentProps<typeof Button> & {
-  status?: "ready" | "submitted" | "streaming" | "error";
+  status?: 'ready' | 'submitted' | 'streaming' | 'error';
 };
 
 export const PromptInputSubmit = React.forwardRef<
   HTMLButtonElement,
   PromptInputSubmitProps
->(({ className, status = "ready", disabled, children, ...props }, ref) => (
+>(({ className, status = 'ready', disabled, children, ...props }, ref) => (
   <Button
     ref={ref}
     type="submit"
     size="icon-sm"
-    disabled={disabled || status === "submitted" || status === "streaming"}
-    className={cn("size-8 rounded-full", className)}
+    disabled={disabled || status === 'submitted' || status === 'streaming'}
+    className={cn('size-8 rounded-full', className)}
     {...props}
   >
     {children ?? <ArrowUpIcon className="size-4" />}
   </Button>
 ));
-PromptInputSubmit.displayName = "PromptInputSubmit";
+PromptInputSubmit.displayName = 'PromptInputSubmit';

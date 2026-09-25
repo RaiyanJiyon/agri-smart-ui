@@ -1,29 +1,39 @@
-"use client"
+'use client';
 
-import { Bot, Leaf, Menu, MessageCircle, Plus, Search } from "lucide-react";
-import { useState } from "react";
-import { AppShell } from "@/features/shared/AppShell";
-import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Bot, Leaf, Menu, MessageCircle, Plus, Search } from 'lucide-react';
+import { useState } from 'react';
+import { AppShell } from '@/features/shared/AppShell';
+import { Button } from '@/components/ui/button';
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet';
 import {
   Conversation,
   ConversationContent,
   ConversationScrollButton,
-} from "@/components/ai-elements/conversation";
-import { Message, MessageContent, MessageResponse } from "@/components/ai-elements/message";
+} from '@/components/ai-elements/conversation';
+import {
+  Message,
+  MessageContent,
+  MessageResponse,
+} from '@/components/ai-elements/message';
 import {
   PromptInput,
   PromptInputFooter,
   PromptInputSubmit,
   PromptInputTextarea,
-} from "@/components/ai-elements/prompt-input";
+} from '@/components/ai-elements/prompt-input';
 
 const conversations = [
-  { title: "Tomato fertilizer advice", time: "10 min ago", active: true },
-  { title: "Rice planting schedule", time: "Yesterday", active: false },
-  { title: "Leaf yellowing causes", time: "Sep 14", active: false },
-  { title: "Preparing soil for maize", time: "Sep 09", active: false },
-  { title: "Natural pest control", time: "Aug 28", active: false },
+  { title: 'Tomato fertilizer advice', time: '10 min ago', active: true },
+  { title: 'Rice planting schedule', time: 'Yesterday', active: false },
+  { title: 'Leaf yellowing causes', time: 'Sep 14', active: false },
+  { title: 'Preparing soil for maize', time: 'Sep 09', active: false },
+  { title: 'Natural pest control', time: 'Aug 28', active: false },
 ];
 
 function ConversationList() {
@@ -50,7 +60,7 @@ function ConversationList() {
             key={conversation.title}
             type="button"
             variant="ghost"
-            className={`h-auto w-full flex-col items-start gap-0 rounded-2xl p-3 text-left whitespace-normal ${conversation.active ? "bg-[#FDFDF8] text-[#132A1D] shadow-sm hover:bg-[#FDFDF8] hover:text-[#132A1D]" : "text-[#68756B] hover:bg-[#FDFDF8]/70 hover:text-[#132A1D]"}`}
+            className={`h-auto w-full flex-col items-start gap-0 rounded-2xl p-3 text-left whitespace-normal ${conversation.active ? 'bg-[#FDFDF8] text-[#132A1D] shadow-sm hover:bg-[#FDFDF8] hover:text-[#132A1D]' : 'text-[#68756B] hover:bg-[#FDFDF8]/70 hover:text-[#132A1D]'}`}
           >
             <span className="block w-full truncate text-sm font-semibold">
               {conversation.title}
@@ -66,20 +76,23 @@ function ConversationList() {
 }
 
 const messages = [
-  { role: "user" as const, text: "What fertilizer is best for tomatoes during flowering?" },
   {
-    role: "assistant" as const,
-    text: "During flowering, tomatoes benefit from a fertilizer that is lower in nitrogen and higher in phosphorus and potassium. A balanced choice such as **5-10-10** can support stronger blooms and fruit development without pushing too much leafy growth.",
+    role: 'user' as const,
+    text: 'What fertilizer is best for tomatoes during flowering?',
   },
-  { role: "user" as const, text: "How often should I apply it?" },
   {
-    role: "assistant" as const,
-    text: "For most granular fertilizers, apply every **3–4 weeks** according to the product label. Water the soil first, keep fertilizer a few inches from the stem, and watch for leaf-edge browning, which can signal overfeeding. If you share your soil pH and current fertilizer, I can help narrow it down.",
+    role: 'assistant' as const,
+    text: 'During flowering, tomatoes benefit from a fertilizer that is lower in nitrogen and higher in phosphorus and potassium. A balanced choice such as **5-10-10** can support stronger blooms and fruit development without pushing too much leafy growth.',
+  },
+  { role: 'user' as const, text: 'How often should I apply it?' },
+  {
+    role: 'assistant' as const,
+    text: 'For most granular fertilizers, apply every **3–4 weeks** according to the product label. Water the soil first, keep fertilizer a few inches from the stem, and watch for leaf-edge browning, which can signal overfeeding. If you share your soil pH and current fertilizer, I can help narrow it down.',
   },
 ];
 
 export default function AiAssistantPage() {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState('');
   return (
     <AppShell title="AI Assistant">
       <div className="mx-auto flex h-[calc(100svh-7.5rem)] min-h-[600px] max-w-[1440px] overflow-hidden rounded-[1.5rem] border border-[#D4DAC8] bg-[#FDFDF8] shadow-sm">
@@ -117,9 +130,12 @@ export default function AiAssistantPage() {
                 <Leaf className="size-5" />
               </span>
               <div className="min-w-0">
-                <h2 className="truncate font-semibold text-[#132A1D]">AgriSmart Assistant</h2>
+                <h2 className="truncate font-semibold text-[#132A1D]">
+                  AgriSmart Assistant
+                </h2>
                 <p className="mt-0.5 flex items-center gap-1.5 text-xs text-[#68756B]">
-                  <span className="size-1.5 rounded-full bg-[#4F8A5B]" /> Ready to help
+                  <span className="size-1.5 rounded-full bg-[#4F8A5B]" /> Ready
+                  to help
                 </p>
               </div>
             </div>
@@ -139,9 +155,11 @@ export default function AiAssistantPage() {
               {messages.map((message, index) => (
                 <div
                   key={`${message.role}-${index}`}
-                  className={message.role === "assistant" ? "flex items-start gap-3" : ""}
+                  className={
+                    message.role === 'assistant' ? 'flex items-start gap-3' : ''
+                  }
                 >
-                  {message.role === "assistant" && (
+                  {message.role === 'assistant' && (
                     <span className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full bg-[#E7EBDA] text-[#132A1D]">
                       <Bot className="size-4" />
                     </span>
@@ -149,9 +167,9 @@ export default function AiAssistantPage() {
                   <Message from={message.role}>
                     <MessageContent
                       className={
-                        message.role === "user"
-                          ? "rounded-2xl rounded-br-md bg-[#132A1D] px-4 py-3 text-[#FDFDF8]"
-                          : "bg-transparent px-0 py-1 text-[#1F3527]"
+                        message.role === 'user'
+                          ? 'rounded-2xl rounded-br-md bg-[#132A1D] px-4 py-3 text-[#FDFDF8]'
+                          : 'bg-transparent px-0 py-1 text-[#1F3527]'
                       }
                     >
                       <MessageResponse>{message.text}</MessageResponse>

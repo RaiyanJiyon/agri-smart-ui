@@ -27,9 +27,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
       className={`${jakarta.variable} ${poppins.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-background text-foreground antialiased">
-        <TooltipProvider>
-          {children}
-        </TooltipProvider>
+        <TooltipProvider>{children}</TooltipProvider>
       </body>
     </html>
   );
